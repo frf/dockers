@@ -16,6 +16,7 @@ services:
       SERVICE_NAME: mysql
     volumes:
       - mysql-volume-57:/var/lib/mysql:delegated
+      - ./docker-configs:/tmp
     network_mode: bridge
 volumes:
   mysql-volume-57:
