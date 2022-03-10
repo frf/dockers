@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 
 services:
   #MySQL Service
@@ -18,5 +18,14 @@ services:
       - mysql-volume-57:/var/lib/mysql:delegated
       - ./docker-configs:/tmp
     network_mode: bridge
+  redis:
+    container_name: redis
+    image: redis
+    volumes:
+      - redis-data:/data:cached
+    ports:
+      - "6379:6379"
+    network_mode: bridge
 volumes:
   mysql-volume-57:
+  redis-data:
